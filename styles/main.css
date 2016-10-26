@@ -1,0 +1,14 @@
+body h1 {
+  color: goldenrod; }
+
+.search-bar {
+  width: 50%;
+  background-color: aquamarine;
+  text-align: center; }
+
+#output img {
+  height: 100px;
+  width: 100px;
+  margin: 5px;
+  display: inline-block;
+  border-radius: 100%; }

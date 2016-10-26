@@ -24,12 +24,7 @@ let imageList = (searchText) => {
 	}, (errorResponse) => {
 		// console.log("imgur fail", errorResponse);
 		reject(errorResponse);
-	});
-
-
-
-
-			
+	});		
 		}, (errorResponse) => {
 			console.log("errorResponse", errorResponse);
 		});
@@ -39,10 +34,22 @@ let imageList = (searchText) => {
 
 
 $(document).ready(function() {
-	console.log("jquery is ready");
-	imageList('cat').then((dataFromImgur) => {
-		console.log('dataFromImgur', dataFromImgur);
+
+	$('#clicky-button').on('click', () => {
+		$("#clicky-button").button('loading');
+		$('#output').html("");
+		let searchy = $('#imgur-search').val();
+		imageList(searchy).then((dataFromImgur) => {
+			$("#clicky-button").button('reset');
+			dataFromImgur.forEach((image) => {
+				$('#output').append(`<img src="${image.link}">`);
+			}).catch((error) => {
+				$("#clicky-button").button('reset');
+			});
+		});
 	});
+
+
 });
 
 
