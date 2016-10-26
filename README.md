@@ -1,0 +1,1 @@
+take apiKeys.json.example, change the name to apiKeys.json....get your imgur key and put it in there
